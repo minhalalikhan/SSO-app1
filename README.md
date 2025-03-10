@@ -5,8 +5,8 @@
 This app is a demo client app which is used to demonstrate SSO login functionality. This app works by implementing the [SSO-Authstore](__https://github.com/minhalalikhan/SSO-Authstore__) app which acts as the source of truth
 
 ## Demo
-- [AuthStore]()
-- [App1]()
+- [AuthStore](https://sso-authstore.vercel.app/)
+- [App1](https://sso-app1.vercel.app/)
 
 
 ## How to use
