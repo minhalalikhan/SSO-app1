@@ -1,15 +1,15 @@
-**# SSO Login Client App1**
+# SSO Login Client App1
 
-**## Introduction**
+## Introduction
 
 This app is a demo client app which is used to demonstrate SSO login functionality. This app works by implementing the [SSO-Authstore](__https://github.com/minhalalikhan/SSO-Authstore__) app which acts as the source of truth
 
-**## Demo**
+## Demo
 - [AuthStore]()
 - [App1]()
 
 
-**## How to use**
+## How to use
 
 - clone this repo
 - clone the AuthStore repo
@@ -19,7 +19,7 @@ This app is a demo client app which is used to demonstrate SSO login functionali
 -   click on SignIn with AuthStore
 -   Login to AuthStore if not already signedIn
 
-**## Env File**
+## Env File
 
 ```
 NEXTAUTH_SECRET='put any text here for Next-auth encryption'
