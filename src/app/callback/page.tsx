@@ -2,23 +2,23 @@
 import { Skeleton } from '@/components/ui/skeleton'
 import { signIn, useSession } from 'next-auth/react'
 import { redirect, useSearchParams } from 'next/navigation'
-import React, { useEffect } from 'react'
+import React, { Suspense, useEffect } from 'react'
 
-type Props = {}
 
-function page({ }: Props) {
+
+function Page() {
 
   const searchParams = useSearchParams()
-  console.log("isndie callback page")
+
 
   const token = searchParams.get('token')
 
-  const { data, status } = useSession()
+  const { status } = useSession()
 
 
   async function createToken() {
     console.log('calling create token')
-    const res = await signIn('TokenCredentials', { AuthCode: token, redirect: false })
+    await signIn('TokenCredentials', { AuthCode: token, redirect: false })
 
   }
 
@@ -43,4 +43,14 @@ function page({ }: Props) {
   )
 }
 
-export default page
+
+
+export default function Callback() {
+  return (
+    <Suspense>
+      <Page />
+    </Suspense>
+  )
+
+}
+

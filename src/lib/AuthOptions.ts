@@ -1,8 +1,8 @@
 
 import axios from "axios";
-import { error } from "console";
-import { AuthOptions, NextAuthOptions, Session, User } from "next-auth";
-import { JWT } from "next-auth/jwt";
+
+import { AuthOptions } from "next-auth";
+
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export const authOptions: AuthOptions = {
@@ -74,11 +74,11 @@ export const authOptions: AuthOptions = {
         // GoogleProvider({})
     ],
     callbacks: {
-        async jwt({ token, account }) {
+        async jwt({ token, }) {
             console.log("JWT callback token:", token);
             return token;
         },
-        async session({ session, token }) {
+        async session({ session }) {
             console.log("Session callback session:", session);
             return session;
         }

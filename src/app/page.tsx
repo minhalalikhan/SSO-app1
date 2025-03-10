@@ -3,9 +3,8 @@ import SignInForm from "@/components/SignInForm/SignInForm";
 import SignInSkeleton from "@/components/SignInForm/SignInSkeleton";
 import { Button } from "@/components/ui/button";
 import { signOut, useSession } from "next-auth/react";
-import { signIn } from 'next-auth/react'
-import { redirect, useSearchParams } from 'next/navigation'
-import React, { ReactNode, useEffect } from 'react'
+
+import React, { ReactNode, Suspense } from 'react'
 
 
 
@@ -49,17 +48,19 @@ export default function Home() {
   if (status === "unauthenticated")
     return (
       <Container>
+        <Suspense fallback={ <SignInSkeleton /> }>
 
-        <div className="w-full h-full flex items-center p-4 flex-col gap-2.5">
+          <div className="w-full h-full flex items-center p-4 flex-col gap-2.5">
 
-          <div className="flex-1 flex items-center flex-col gap-3">
+            <div className="flex-1 flex items-center flex-col gap-3">
 
-            <SignInForm />
-            <Button onClick={ SSOlogin }>
-              Sign in with AuthStore
-            </Button>
+              <SignInForm />
+              <Button onClick={ SSOlogin }>
+                Sign in with AuthStore
+              </Button>
+            </div>
           </div>
-        </div>
+        </Suspense>
       </Container>
     );
 }
