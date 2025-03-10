@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+**# SSO Login Client App1**
 
-## Getting Started
+**## Introduction**
 
-First, run the development server:
+This app is a demo client app which is used to demonstrate SSO login functionality. This app works by implementing the [SSO-Authstore](__https://github.com/minhalalikhan/SSO-Authstore__) app which acts as the source of truth
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**## Demo**
+- [AuthStore]()
+- [App1]()
+
+
+**## How to use**
+
+- clone this repo
+- clone the AuthStore repo
+-  add relevant env variables on both projects
+-   npm run dev command to start each of them
+-   Visit App1
+-   click on SignIn with AuthStore
+-   Login to AuthStore if not already signedIn
+
+**## Env File**
+
 ```
+NEXTAUTH_SECRET='put any text here for Next-auth encryption'
+!! replace localhost and port with domain 
+NEXT_AUTHSTORE_TOKEN_URL='http://localhost:3000/api/token' 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+!! IMPORTANT : 
+CLIENT_ID AND CLIENT_KEY must match those in Authstore Store.ts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+CLIENT_ID='1234'
+CLIENT_KEY='app1@5832'
 
-## Learn More
+!! whatever the current URL of the app1 is
+NEXTAUTH_URL='http://localhost:4001'
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+NEXT_PUBLIC_AUTHSTORE_URL='http://localhost:3000/'
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+!! must match ClIENT_ID
+NEXT_PUBLIC_CLIENT_ID='1234'
+!! here localhost:4001 to be replaced with app1 domain 
+NEXT_PUBLIC_CALLBACK_URL='http://localhost:4001/callback'
+```
