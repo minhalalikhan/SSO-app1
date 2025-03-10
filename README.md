@@ -33,8 +33,6 @@ CLIENT_ID AND CLIENT_KEY must match those in Authstore Store.ts
 CLIENT_ID='1234'
 CLIENT_KEY='app1@5832'
 
-!! whatever the current URL of the app1 is
-NEXTAUTH_URL='http://localhost:4001'
 
 
 NEXT_PUBLIC_AUTHSTORE_URL='http://localhost:3000/'
